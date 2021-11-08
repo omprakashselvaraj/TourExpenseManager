@@ -8,29 +8,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Animated Login Form | CodingNepal</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
     <div class="center">
       <h1>Login</h1>
-      <form method="post">
+      <form method="POST" action="signin">
         <div class="txt_field">
-          <input type="text" required>
+          <input id="uname" name="uname" type="text" required>
           <span></span>
           <label>Username</label>
         </div>
         <div class="txt_field">
-          <input type="password" required>
+          <input id="password" name="password" type="password"  required>
           <span></span>
           <label>Password</label>
         </div>
         <div class="pass">Forgot Password?</div>
         <input type="submit" value="Login">
+      </form>
         <div class="signup_link">
           Not a member? <a href="signup.html">Signup</a>
         </div>
-      </form>
+   
     </div>
 
   </body>

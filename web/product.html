@@ -1,8 +1,41 @@
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Tour Expense Manager</title>
+        <link rel="stylesheet" href="styles/style1.css">
     </head>
     <body>
-        <p>Product</p>
+        <br>
+        <center><h1>Enter Trip Details</h1></center><br>
+        <center>
+            <form action="dayscalc.jsp" method="POST" >
+                <label for="tname">Enter Trip name</label><br>
+                <input type="text" id="tname" name="tname" placeholder="Enter Trip Name"><br>
+                <label for="sdate">Start Date</label><br>
+                <input type="date" id="sdate" name="sdate"><br>
+                <label for="edate">End Date</label><br>
+                <input type="date" id="edate" name="edate"><br>
+                <label for="np">Enter No of Person</label><br>
+                <input type="number" id="np" name="np" placeholder="Enter No of Person"><br>
+                <label for="nd">Enter No of Days</label><br>
+                <input type="number" id="nd" name="nd" placeholder="Enter No of Days"><br>
+                <h1>Enter Expense Detail</h1><br>
+                <label for="tfee">Enter Air/Bus/Rail Fee</label><br>
+                <input type="text" id="tfee" name="tfee" placeholder="Enter Air/Bus/Rail Fee"><br>
+                <label for="cfee">Enter Car/Jeep rental Fee</label><br>
+                <input type="text" id="cfee" name="cfee" placeholder="Enter Car/Jeep rental Fee"><br>
+                <label for="ofee">Enter parking/toll Fee</label><br>
+                <input type="text" id="ofee" name="ofee" placeholder="Enter parking/toll Fee"><br>
+                <label for="bfee">Enter Breakfast Amount</label><br>
+                <input type="text" id="bfee" name="bfee" placeholder="Enter Breakfast Amount"><br>
+                <label for="lfee">Enter Lunch Amount</label><br>
+                <input type="text" id="lfee" name="lfee" placeholder="Enter Lunch Amount"><br>
+                <label for="dfee">Enter Dinner Amount</label><br>
+                <input type="text" id="dfee" name="dfee" placeholder="Enter Dinner Amount"><br>
+                <label for="rfee">Enter Room Rent</label><br>
+                <input type="text" id="rfee" name="rfee" placeholder="Enter Room Rent"><br><br>
+                <input type="submit" value="CALCULATE">
+            </form>
+        </center>
     </body>
 </html>
