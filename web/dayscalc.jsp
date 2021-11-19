@@ -8,6 +8,7 @@
         <title>Tour Expense Manager</title>
     </head>
     <body>
+        <a href="product.html">Go Back</a>
         <%
         String tname=request.getParameter("tname");  
         String sdate=request.getParameter("sdate");
@@ -82,7 +83,31 @@
         <center><h1>Expense Report</h1></center>
         <br><br>
         <center>
+            <table>
+                <tr>
+                    <td><b> Trip Name: </b></td>
+                    <td> <%= tname %> </td>
+                </tr>
+                <tr>
+                    <td><b> Start Date: </b></td>
+                    <td> <%= sdate %> </td>
+                </tr>
+                <tr>
+                    <td><b> End Date: </b></td>
+                    <td> <%= edate %> </td>
+                </tr>
+                <tr>
+                    <td><b> No of Days: </b></td>
+                    <td> <%= nod %> </td>
+                </tr>
+                <tr>
+                    <td><b> No of Persons: </b></td>
+                    <td> <%= nop %> </td>
+                </tr>
+            </table>
+            <br><br>
             <p><b>Overall Summary Table</b></p> 
+    
         <table>
             <tr>
                 <th>Day</th>
@@ -165,6 +190,10 @@
                     <td><%= sum/nop %></td>
                 </tr>
             </table>
+                <br><br>
+                <button onclick="window.print()">Print Summary</button>
+                <br><br>
         </center>
+               
     </body>
 </html>
