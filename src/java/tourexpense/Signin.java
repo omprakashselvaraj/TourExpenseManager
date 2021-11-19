@@ -22,6 +22,7 @@ import java.sql.Statement;
 import java.util.HashMap;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -57,6 +58,9 @@ public class Signin extends HttpServlet{
                 String getPass;
                 getPass = map.get(uname);
                 if(getPass.equals(password)){
+                    HttpSession session = request.getSession(true);
+                    session.setAttribute("user", uname);
+                    session.setMaxInactiveInterval(200); 
                     out.println("<html><head></head><body onload=\"alert('Login Successful')\"></body></html>");
                     RequestDispatcher rd;  
                     rd = request.getRequestDispatcher("/product.html");
@@ -66,7 +70,7 @@ public class Signin extends HttpServlet{
                 else{
                     out.println("<html><head></head><body onload=\"alert('Incorrect Password')\"></body></html>");
                     RequestDispatcher rd;  
-                    rd = request.getRequestDispatcher("/signup.html");
+                    rd = request.getRequestDispatcher("/signin.html");
                     rd.include(request, response);
                     return;
                 }
