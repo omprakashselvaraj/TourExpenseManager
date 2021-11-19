@@ -5,4 +5,36 @@
             30
         </session-timeout>
     </session-config>
+      <servlet>
+    <servlet-name>sessioncheck</servlet-name>
+    <servlet-class>tourexpense.Sessioncheck</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sessioncheck</servlet-name>
+        <url-pattern>/sessioncheck</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    <servlet-name>viewprofile</servlet-name>
+    <servlet-class>tourexpense.Viewprofile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>viewprofile</servlet-name>
+        <url-pattern>/viewprofile</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>tourexpense.Logout</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet>
+    <servlet-name>back</servlet-name>
+    <servlet-class>tourexpense.Back</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>back</servlet-name>
+        <url-pattern>/back</url-pattern>
+    </servlet-mapping>
 </web-app>
