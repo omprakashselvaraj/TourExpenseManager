@@ -44,8 +44,10 @@ public class Viewprofile extends HttpServlet {
             String pass="2410";  
             Connection con=DriverManager.getConnection(url, user, pass); 
             String quer="select * from register";
+      
             Statement stmt = con.createStatement();  
             ResultSet rs = stmt.executeQuery(quer);
+            
             while(rs.next()){
                 if(rs.getString("uname").equals(name)){
                     String username=rs.getString("uname");
@@ -58,13 +60,14 @@ public class Viewprofile extends HttpServlet {
                     request.setAttribute("email", email);
                     request.setAttribute("gender", gender);
                     request.setAttribute("phone", phone);
-                    
                     RequestDispatcher dispatcher = request.getRequestDispatcher("viewprofile.jsp");
-
                     dispatcher.forward(request, response);
+                    
                 }
            
           }
+          //RequestDispatcher dispatcher = request.getRequestDispatcher("viewprofile.jsp");
+          //dispatcher.forward(request, response);
           }
               
        
