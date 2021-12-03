@@ -1,3 +1,10 @@
+<%@page import="tourexpense.Signup"%>
+<%@page import="java.util.logging.Logger"%>
+<%@page import="java.util.logging.Level"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="java.util.Arrays"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -24,6 +31,7 @@
         String rfee=request.getParameter("rfee");
         int nop=Integer.parseInt(np);
         int nod=Integer.parseInt(nd);
+        String username=(String)session.getAttribute("user");
         String[] travel = tfee.split(" ");
         String[] car = cfee.split(" ");
         String[] park = ofee.split(" ");
@@ -79,9 +87,39 @@
             sum+=totexp[i];
         }
         %>
+        <%
+            try{
+                Class.forName("com.mysql.jdbc.Driver");    
+                String url="jdbc:mysql://localhost:3306/tourexpense";    
+                String user="root";    
+                String pass="2410";  
+                Connection con=DriverManager.getConnection(url, user, pass);   
+                String query;    
+                query = "insert into expense values (?,?,?,?,?,?,?)";
+                PreparedStatement pstmt=con.prepareStatement(query);    
+                pstmt.setString(1, username);    
+                pstmt.setString(2, sdate);    
+                pstmt.setString(3, edate);    
+                pstmt.setInt(4, nod);    
+                pstmt.setInt(5, nop);    
+                pstmt.setInt(6, sum);    
+                pstmt.setInt(7, sum/nop);
+                int x=pstmt.executeUpdate();    
+                
+            
+            
+            }
+            catch(SQLException e)    
+            {    
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+        %>
         <br>
         <center><h1>Expense Report</h1></center>
         <br><br>
+        <center><h3><%= username %></h3></center>
         <center>
             <table>
                 <tr>
