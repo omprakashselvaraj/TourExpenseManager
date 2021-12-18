@@ -1,0 +1,3 @@
+1.create database tourexpense;
+2.use tourexpense;
+3.create table register(name varchar(40),email varchar(50),uname varchar(30),password varchar(12),gender varchar(10),phone varchar(30));
